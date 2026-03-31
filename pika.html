@@ -4,28 +4,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Wordle</title>
+    <title>Wordle</title>
     <style>
-        /* CSS: Styles the page and the grid to look like Wordle */
+
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             background-color: #121213;
-            /* Dark mode background */
             color: white;
             font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
+            height: 100vh;
         }
-        /* The Flip Animation */
+
+
+        .split-container {
+            display: flex;
+            height: 100%;
+            width: 100%;
+        }
+
+        .game-side {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-right: 2px solid #3a3a3c;
+
+        }
+
+        #restart-btn {
+            margin-top: 30px;
+            padding: 12px 24px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+            background-color: #538d4e;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        #restart-btn:hover {
+            background-color: #43713f;
+
+        }
+
+
+        .terminal-side {
+            flex: 1;
+
+            background-color: #000;
+            color: #0f0;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .terminal-header {
+            background-color: #222;
+            color: #fff;
+            padding: 10px;
+            font-weight: bold;
+            text-align: center;
+            border-bottom: 2px solid #333;
+        }
+
+        #terminal-content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
         @keyframes flipTile {
             0% {
                 transform: rotateX(0deg);
             }
+
             50% {
-                transform: rotateX(-90deg); /* Flips it flat so you can't see it */
+                transform: rotateX(-90deg);
             }
+
             100% {
                 transform: rotateX(0deg);
             }
@@ -38,11 +99,10 @@
         #board {
             display: grid;
             grid-template-columns: repeat(5, 60px);
-            /* 5 columns */
             grid-template-rows: repeat(6, 60px);
-            /* 6 rows */
             gap: 5px;
         }
+
         .green {
             background-color: #538d4e !important;
             border-color: #538d4e !important;
@@ -63,7 +123,6 @@
 
         .tile {
             border: 2px solid #3a3a3c;
-            /* Empty box border color */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -73,7 +132,6 @@
             box-sizing: border-box;
         }
 
-        /* The animation definition */
         @keyframes pop {
             0% {
                 transform: scale(1);
@@ -89,22 +147,28 @@
             }
         }
 
-        /* The class that triggers the animation */
         .animate-pop {
             animation: pop 0.1s ease-in-out;
         }
-
     </style>
 </head>
 
 <body>
 
-    <div id="board"></div>
+    <div class="split-container">
+        <div class="game-side">
+            <h1>Wordle game</h1>
+            <div id="board"></div>
+            <button id="restart-btn">Restart Game</button>
+        </div>
 
-    <script src="./pika.js">
+        <div class="terminal-side">
+            <div class="terminal-header">Events</div>
+            <div id="terminal-content"></div>
+        </div>
+    </div>
 
-
-    </script>
+    <script src="./pika.js"></script>
 
 </body>
 
