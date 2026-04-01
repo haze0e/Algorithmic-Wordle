@@ -359,6 +359,25 @@ get_data();
 
 start_game();
 
+function make_background() {
+    const bg_Element = document.getElementById('main-bg');
+    if (!bg_Element) return;
+
+    const chars = "01/*-+$%#@!<>~ ";
+    let bgText = "";
+    
+    for (let i = 0; i < 100; i++) {
+        for (let j = 0; j < 150; j++) {
+            bgText += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        bgText += "\n";
+    }
+    bg_Element.innerText = bgText;
+}
+
+make_background();
+
+
 if (restartBtn) {
     restartBtn.addEventListener("click", start_game);
 
