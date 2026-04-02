@@ -1,4 +1,3 @@
-```markdown
 # Wordle Clone & Auto-Solver Bot 🟩🟨⬛
 
 A fully functional, browser-based Wordle clone featuring a sleek hacker-aesthetic UI and a built-in, mathematically optimized Auto-Solver Bot. The bot uses expected value and information theory concepts to deduce the hidden word, narrating its "thought process" in real-time via a retro terminal interface.
@@ -48,4 +47,3 @@ The auto-solver is more than just a random guesser; it calculates the optimal mo
 
 * **HTML5 / CSS3:** Flexbox/Grid layouts and custom keyframe animations.
 * **Vanilla JavaScript:** ES6 Modules, DOM manipulation, and algorithm implementation without any external libraries.
-```
