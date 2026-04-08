@@ -2,6 +2,8 @@
 
 A fully functional, browser-based Wordle clone featuring a sleek hacker-aesthetic UI and a built-in, mathematically optimized Auto-Solver Bot. The bot uses expected value and information theory concepts to deduce the hidden word, narrating its "thought process" in real-time via a retro terminal interface.
 
+https://haze0e.github.io/Algorithmic-Wordle/
+
 ## ✨ Features
 
 * **Classic Wordle Gameplay:** Guess the 5-letter word in 6 tries with standard color-coded feedback (Green, Yellow, Grey).
